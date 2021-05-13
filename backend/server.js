@@ -18,6 +18,11 @@ connection.once('open',()=>{
     console.log('MongoDB datebase connection established successfully')
 })
 
+const exerciseRouter=require('./routes/exercise')
+const userRouter=require('./routes/user')
+app.use('/exercises',exerciseRouter)
+app.use('/users',userRouter )
+
 app.listen(port,()=>{
     console.log(`server is running on port: ${port}`);
 })
